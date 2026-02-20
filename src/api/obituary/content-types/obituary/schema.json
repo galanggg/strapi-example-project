@@ -1,0 +1,132 @@
+{
+  "kind": "collectionType",
+  "collectionName": "obituaries",
+  "info": {
+    "singularName": "obituary",
+    "pluralName": "obituaries",
+    "displayName": "Obituary",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "deathDate": {
+      "type": "date"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "fullStory": {
+      "type": "richtext"
+    },
+    "passingLocation": {
+      "type": "string"
+    },
+    "birthPlace": {
+      "type": "string"
+    },
+    "parents": {
+      "type": "json"
+    },
+    "educationDetails": {
+      "type": "json"
+    },
+    "spouseName": {
+      "type": "string"
+    },
+    "marriageDate": {
+      "type": "date"
+    },
+    "spousePassingDate": {
+      "type": "date"
+    },
+    "careerDetails": {
+      "type": "json"
+    },
+    "awards": {
+      "type": "json"
+    },
+    "keyAnecdotes": {
+      "type": "richtext"
+    },
+    "children": {
+      "type": "json"
+    },
+    "grandchildren": {
+      "type": "json"
+    },
+    "siblings": {
+      "type": "json"
+    },
+    "precededBy": {
+      "type": "richtext"
+    },
+    "donationRequest": {
+      "type": "string"
+    },
+    "photoGallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tributeVideo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "shareLink": {
+      "type": "string"
+    },
+    "followLink": {
+      "type": "string"
+    },
+    "createAITributeVideoLink": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "component",
+      "repeatable": true,
+      "component": "obituary.timeline-event"
+    },
+    "serviceDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "obituary.service-detail"
+    },
+    "tributes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "obituary.tribute"
+    },
+    "supportOptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "obituary.support-option"
+    },
+    "activityLog": {
+      "type": "component",
+      "repeatable": true,
+      "component": "obituary.activity-log"
+    }
+  }
+}

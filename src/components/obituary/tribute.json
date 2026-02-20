@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_obituary_tributes",
+  "info": {
+    "displayName": "Tribute",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "authorName": {
+      "type": "string"
+    },
+    "relationship": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "datePosted": {
+      "type": "date"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "mediaAttachment": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    }
+  }
+}

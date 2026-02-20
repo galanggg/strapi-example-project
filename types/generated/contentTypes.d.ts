@@ -467,6 +467,135 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    displayName: 'Category';
+    pluralName: 'categories';
+    singularName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    restaurants: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::restaurant.restaurant'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiObituaryObituary extends Struct.CollectionTypeSchema {
+  collectionName: 'obituaries';
+  info: {
+    description: '';
+    displayName: 'Obituary';
+    pluralName: 'obituaries';
+    singularName: 'obituary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    activityLog: Schema.Attribute.Component<'obituary.activity-log', true>;
+    age: Schema.Attribute.Integer;
+    awards: Schema.Attribute.JSON;
+    birthDate: Schema.Attribute.Date;
+    birthPlace: Schema.Attribute.String;
+    careerDetails: Schema.Attribute.JSON;
+    children: Schema.Attribute.JSON;
+    createAITributeVideoLink: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deathDate: Schema.Attribute.Date;
+    donationRequest: Schema.Attribute.String;
+    educationDetails: Schema.Attribute.JSON;
+    followLink: Schema.Attribute.String;
+    fullName: Schema.Attribute.String;
+    fullStory: Schema.Attribute.RichText;
+    grandchildren: Schema.Attribute.JSON;
+    keyAnecdotes: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::obituary.obituary'
+    > &
+      Schema.Attribute.Private;
+    marriageDate: Schema.Attribute.Date;
+    nickname: Schema.Attribute.String;
+    parents: Schema.Attribute.JSON;
+    passingLocation: Schema.Attribute.String;
+    photoGallery: Schema.Attribute.Media<'images', true>;
+    precededBy: Schema.Attribute.RichText;
+    publishedAt: Schema.Attribute.DateTime;
+    serviceDetails: Schema.Attribute.Component<'obituary.service-detail', true>;
+    shareLink: Schema.Attribute.String;
+    shortDescription: Schema.Attribute.Text;
+    siblings: Schema.Attribute.JSON;
+    spouseName: Schema.Attribute.String;
+    spousePassingDate: Schema.Attribute.Date;
+    supportOptions: Schema.Attribute.Component<'obituary.support-option', true>;
+    timeline: Schema.Attribute.Component<'obituary.timeline-event', true>;
+    tributes: Schema.Attribute.Component<'obituary.tribute', true>;
+    tributeVideo: Schema.Attribute.Media<'videos'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
+  collectionName: 'restaurants';
+  info: {
+    displayName: 'Restaurant';
+    pluralName: 'restaurants';
+    singularName: 'restaurant';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::restaurant.restaurant'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -979,6 +1108,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::category.category': ApiCategoryCategory;
+      'api::obituary.obituary': ApiObituaryObituary;
+      'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

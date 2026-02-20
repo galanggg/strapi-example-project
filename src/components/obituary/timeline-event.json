@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_obituary_timeline_events",
+  "info": {
+    "displayName": "Timeline Event",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

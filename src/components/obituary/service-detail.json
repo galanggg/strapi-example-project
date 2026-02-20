@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_obituary_service_details",
+  "info": {
+    "displayName": "Service Detail",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Visitation",
+        "Funeral Service",
+        "Memorial Service"
+      ]
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "string"
+    },
+    "locationName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "directionsLink": {
+      "type": "string"
+    },
+    "additionalInfo": {
+      "type": "richtext"
+    }
+  }
+}

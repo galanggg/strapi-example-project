@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_obituary_support_options",
+  "info": {
+    "displayName": "Support Option",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Memorial Tree",
+        "Flowers",
+        "Candle"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "actionLink": {
+      "type": "string"
+    }
+  }
+}

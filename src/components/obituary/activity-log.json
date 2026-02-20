@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_obituary_activity_logs",
+  "info": {
+    "displayName": "Activity Log",
+    "icon": "bullhorn"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "datetime"
+    }
+  }
+}
